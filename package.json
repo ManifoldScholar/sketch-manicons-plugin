@@ -1,0 +1,38 @@
+{
+  "name": "manicon",
+  "version": "0.1.0",
+  "skpm": {
+    "name": "manicon",
+    "manifest": "src/manifest.json",
+    "main": "manicon.sketchplugin",
+    "assets": [
+      "assets/**/*"
+    ]
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.10"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.3.3",
+    "@skpm/child_process": "^0.2.4",
+    "@skpm/fs": "^0.2.0",
+    "@skpm/os": "0.1.1",
+    "@skpm/path": "^0.1.1",
+    "ejs": "^2.6.1",
+    "html2json": "^1.0.2",
+    "humps": "^2.0.1",
+    "lodash": "^4.17.0",
+    "node-html-parser": "^1.1.12",
+    "posthtml": "^0.11.3",
+    "rimraf": "^2.6.3",
+    "sketch-utils": "^0.1.2",
+    "svgo": "^1.1.1"
+  },
+  "author": "Zach Davis <zach@castironcoding.com>"
+}

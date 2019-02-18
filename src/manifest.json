@@ -1,0 +1,19 @@
+{
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "commands": [
+    {
+      "name": "Export Selected Icons",
+      "identifier": "manicon.export-selected-icons-identifier",
+      "script": "./export-selected-icons.js",
+      "shortcut": "ctrl shift m"
+    }
+  ],
+  "menu": {
+    "title": "Manifold Icons",
+    "items": [
+      "manicon.export-selected-icons-identifier"
+    ]
+  }
+}
