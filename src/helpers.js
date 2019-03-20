@@ -55,6 +55,7 @@ class Helpers {
     const duplicateSelection = [];
     selection.forEach(layer => {
        const duplicatedLayer = layer.duplicate();
+       duplicatedLayer.name = duplicatedLayer.name.toLowerCase().replace(/\s/g, '');
        duplicateSelection.push(duplicatedLayer);
    });
    return duplicateSelection;
@@ -63,7 +64,7 @@ class Helpers {
   selectedIcons() {
     const icons = [];
     this.selectedLayers().forEach((layer) => {
-      if (startsWith(layer.name, "icon")) icons.push(layer);
+      if (startsWith(layer.name.toLowerCase(), "icon")) icons.push(layer);
     })
     const iconsCount = icons.length;
     console.log(`${iconsCount} icon layers selected.`);
