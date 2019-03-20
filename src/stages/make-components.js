@@ -72,12 +72,18 @@ const svgJsx = (sourcePath) => {
 }
 
 function makeComponent(sourcePath, target) {
+
+
   const options = {};
   const { svg, width, height, viewBox } = svgJsx(sourcePath);
   const svgGuts = json2html({
     node: "root",
     child: svg["child"]
-  });
+  })
+    .toString()
+    .replace(/xlink:href/g, "href")
+    .replace(/fill="#\d*"/g, "fill={this.fill}")
+    .replace(/stroke="#\d*"/g, "stroke={this.stroke}")
   const name = nameFromPath(sourcePath);
   const data = {
     svg: svgGuts,
@@ -101,6 +107,6 @@ export default function makeComponents(target) {
     makeComponent(sourcePath, target);
   })
 
-  return Promise.resolve();
+  return Promise.resolve(target);
 
 }

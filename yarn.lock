@@ -678,10 +678,10 @@
     "@babel/preset-env" "^7.0.0"
     "@babel/preset-react" "^7.0.0"
 
-"@skpm/builder@^0.5.10":
-  version "0.5.14"
-  resolved "https://registry.yarnpkg.com/@skpm/builder/-/builder-0.5.14.tgz#c834c4c6c6fdf4e52b8466b26d0c6c12fba39050"
-  integrity sha512-ciWqQ8+sq5XaRwWm75sboqK6189rIdaQJDy2zy02pyavNdk8NfAkBvTdrjcnfqfMnS/UGhes3tSNc49FQbm6ug==
+"@skpm/builder@^0.5.16":
+  version "0.5.16"
+  resolved "https://registry.yarnpkg.com/@skpm/builder/-/builder-0.5.16.tgz#bcfdaacedaafde2b37a8f12801085923a4c4e8bb"
+  integrity sha512-x3EHpPu9ppyIt7SUyjZdXOp655fTemB2wZfjjlica+ItZZpP8R6qbwUTvhP4RCeDOlYZReeC8AtODzvhaqSV7g==
   dependencies:
     "@babel/core" "^7.1.6"
     "@skpm/babel-preset" "0.2.1"

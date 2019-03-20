@@ -21,6 +21,7 @@
   "dependencies": {
     "@babel/parser": "^7.3.3",
     "@skpm/child_process": "^0.2.4",
+    "@skpm/builder": "^0.5.16",
     "@skpm/fs": "^0.2.0",
     "@skpm/os": "0.1.1",
     "@skpm/path": "^0.1.1",

@@ -34,6 +34,23 @@ class Helpers {
     return results;
   }
 
+  components(dir) {
+    let results = [];
+    const list = fs.readdirSync(dir);
+    list.forEach((file) => {
+      if (!endsWith(file, "index.js") && endsWith(file, "js")) {
+        file = `${dir}/${file}`;
+        const stat = fs.lstatSync(file);
+        if (stat && stat.isDirectory()) {
+          results = results.concat(this.paths(file));
+        } else {
+          results.push(file);
+        }
+      }
+    })
+    return results;
+  }
+
   duplicateSelection(selection) {
     const duplicateSelection = [];
     selection.forEach(layer => {
