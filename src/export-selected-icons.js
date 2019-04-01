@@ -40,6 +40,9 @@ export default function() {
         console.log("making indexes...")
         makeIndexes(target);
       })
+      .then(_ => {
+        console.log("completed")
+      })
       .catch(error => {
         if (typeof artboards !== undefined) cleanDocument(artboards);
         // console.log(error);
