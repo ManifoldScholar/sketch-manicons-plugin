@@ -6,6 +6,7 @@ import ejs from "ejs";
 import indexTemplate from "../template/index.js"
 import capitalize from "lodash/capitalize";
 import sortBy from "lodash/sortBy";
+import startsWith from "lodash/startsWith";
 
 export default function makeIndexes(target) {
 
@@ -26,6 +27,10 @@ export default function makeIndexes(target) {
       pathParts.pop();
       exportName = `${humps.pascalize(`${pathParts.join("_")}--${file}`)}`;
     }
+
+    // A hack, for now, to handle icons with BE at the beginning of the name.
+    if(startsWith(exportName, "Be")) exportName = exportName.replace(/^.{2}/g, 'BE');
+
 
     return { rel: `./${rel}`, exportName }
   });
