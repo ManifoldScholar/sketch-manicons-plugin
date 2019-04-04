@@ -8,5 +8,5 @@ export default {
   <%= component.exportName %>,
   <% }); -%>
 };
-`
+`;
 export default template;
