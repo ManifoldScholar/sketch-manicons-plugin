@@ -12,7 +12,7 @@ export default class <%= name %> extends Component {
     ]),
     stroke: PropTypes.string,
     fill: PropTypes.string,
-    svgProps: PropTypes.object,
+    svgProps: PropTypes.object
   };
 
   static defaultProps = {
@@ -65,13 +65,13 @@ export default class <%= name %> extends Component {
   }
 
   render() {
-
     const baseSvgProps = {
       xmlns: "http://www.w3.org/2000/svg",
       className: this.classes,
       width: this.width,
       height: this.height,
-      viewBox: this.viewBox
+      viewBox: this.viewBox,
+      fill: this.fill
     };
 
     const svgProps = Object.assign(baseSvgProps, this.props.svgProps);

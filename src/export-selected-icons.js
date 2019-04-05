@@ -12,7 +12,7 @@ export default function() {
 
   const homeDir   = os.homedir();
   const target    = `${homeDir}/Desktop/sketch-icon-export/icon/svg`;
-  const artboards = helpers.duplicateSelection(helpers.selectedIcons());
+  const artboards = helpers.selectedIcons();
 
   try {
     Promise.resolve()
@@ -23,10 +23,6 @@ export default function() {
       .then(_ => {
         console.log("exporting artboards...")
         exportArtboards(artboards, target);
-      })
-      .then(_ => {
-        console.log("cleaning document...")
-        cleanDocument(artboards);
       })
       .then(_ => {
         console.log("compressing SVGs...")
@@ -44,12 +40,8 @@ export default function() {
         console.log("completed")
       })
       .catch(error => {
-        if (typeof artboards !== undefined) cleanDocument(artboards);
-        // console.log(error);
       });
   } catch(error) {
-    if (typeof artboards !== undefined) cleanDocument(artboards);
     throw error;
   }
-
 }

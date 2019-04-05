@@ -31,7 +31,6 @@ export default function makeIndexes(target) {
     // A hack, for now, to handle icons with BE at the beginning of the name.
     if(startsWith(exportName, "Be")) exportName = exportName.replace(/^.{2}/g, 'BE');
 
-
     return { rel: `./${rel}`, exportName }
   });
 

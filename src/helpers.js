@@ -54,6 +54,7 @@ class Helpers {
   duplicateSelection(selection) {
     const duplicateSelection = [];
     selection.forEach(layer => {
+      console.log(layer);
        const duplicatedLayer = layer.duplicate();
        duplicatedLayer.name = duplicatedLayer.name.toLowerCase().replace(/\s/g, '');
        duplicateSelection.push(duplicatedLayer);
